@@ -1,15 +1,19 @@
 class Tag
 
+  attr_reader :type, :classes, :id, :name
+
   def initialize string
-    parse(string)
+    @string = string
   end
 
-  def parse(string)
 
+
+  def type
+    @string.match(/^(<)(\w+)\b/)[2]
   end
 
-  def classes
-    #
+  def class
+    @string.match(/(class=\')(.)\'/)[2]
   end
 
   def id
