@@ -1,29 +1,37 @@
 class Tag
 
   attr_reader :type, :classes, :id, :name
+  attr_accessor :child
+
+  Type = /^(<)(\w+)\b/
+  Classes = /class=\'(.*?)\'/
+  Id = /id=\'(.*?)\'/
+  Name = /name=\'(.*?)\'/
 
   def initialize string
     @string = string
+    @child = nil
   end
 
-
-
   def type
-    @string.match(/^(<)(\w+)\b/)[2]
+    @string.match(Type)[2]
   end
 
   def classes
-    all_classes = @string.match(/class=\'(.*?)\'/)[1].split(" ")
+    all_classes = @string.match(Classes)[1].split(" ")
   end
 
   def id
-    @string.match(/id=\'(.*?)\'/)[1]
+    @string.match(Id)[1]
   end
 
   def name
-    #
+    @string.match(Name)[1] 
   end
 
+  def child
+    @child
+  end
 
 
 end
