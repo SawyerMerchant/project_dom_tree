@@ -13,12 +13,11 @@ class Tag
   end
 
   def classes
-    all_classes = @string.match(/class=\'(.*?\')/)[1][0..-2].split(" ")
-    # all_classes.split(" ")
+    all_classes = @string.match(/class=\'(.*?)\'/)[1].split(" ")
   end
 
   def id
-    #
+    @string.match(/id=\'(.*?)\'/)[1]
   end
 
   def name
