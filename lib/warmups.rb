@@ -12,8 +12,9 @@ class Tag
     @string.match(/^(<)(\w+)\b/)[2]
   end
 
-  def class
-    @string.match(/(class=\')(.)\'/)[2]
+  def classes
+    all_classes = @string.match(/class=\'(.*?\')/)[1][0..-2].split(" ")
+    # all_classes.split(" ")
   end
 
   def id

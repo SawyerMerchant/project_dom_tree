@@ -11,7 +11,7 @@ describe Tag do
     end
 
     it "returns a class" do
-      expect(test_tag.class).to eq(['foo', 'bar'])
+      expect(test_tag.classes).to eq(['foo', 'bar'])
     end
 
   end
