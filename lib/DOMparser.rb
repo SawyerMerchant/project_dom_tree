@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class DOMparser
 
   def initialize
@@ -34,3 +35,6 @@ end
 
 d = DOMparser.new
 
+=======
+DOMparser.rb
+>>>>>>> 340339ae27779e7d5c3ec376204d8f839b426bee
