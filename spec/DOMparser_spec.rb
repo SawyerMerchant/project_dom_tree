@@ -1,4 +1,4 @@
-require 'DOMparser.rb'
+require 'DOMReader'
 
 describe 'DOMparser' do
 
@@ -7,7 +7,7 @@ describe 'DOMparser' do
   describe '#initialize' do
 
     it 'reads in a file and converts it to an array' do
-      expecet
+      expect
     end
 
 
