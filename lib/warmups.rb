@@ -13,6 +13,13 @@ class Tag
     @child = nil
   end
 
+  def parse
+    # regex sniffs for open tags
+    # close tags
+    # '= signs' - returns whats on boths sides
+  end
+
+
   def type
     @string.match(Type)[2]
   end
@@ -26,7 +33,7 @@ class Tag
   end
 
   def name
-    @string.match(Name)[1] 
+    @string.match(Name)[1]
   end
 
   def child
