@@ -43,7 +43,7 @@ class PageParser
   end
 
   def open_tag?(tag)
-    tag.match(OPEN)
+    tag[0] == "<" && tag[1] != "/"
   end
 
   # def text_tag?(tag)
