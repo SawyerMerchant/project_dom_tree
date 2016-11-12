@@ -1,10 +1,11 @@
 class Node
 
-  attr_accessor :children, :type, :attributes, :content
+  attr_accessor :children, :type, :attributes, :content, :tag, :parent, :depth, :content
 
   TYPE = /^(<)(\w+)\b/
   ATTRIBUTES = /(\s\w+)="(\w+[^"]*)/
   CLOSE = /<\/\w+>/
+  CONTENT = /  /
 
   def initialize(tag, depth)
     @tag = tag
@@ -12,7 +13,7 @@ class Node
     @children = []
     @attributes = {}
     @depth = depth
-    @content = ""
+    @content = []
     run
   end
 
@@ -24,9 +25,10 @@ class Node
   def add_type
     if @tag.match(TYPE)
       @type = @tag.match(TYPE)[2]
-    else
-      @type = "text"
-      @content = @tag
+    # text is now content for another tag
+    # else
+    #   @type = "text"
+    #   @content = @tag
     end
   end
 
